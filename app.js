@@ -17,11 +17,11 @@ const port = 4000
 
 app.post('/', async (req, res) => {
 
-    const imgBase64 = req.body.params.img
+    //const imgBase64 = req.body.params.img
 
-    const uuid = await saveImage(imgBase64)
+    //const uuid = await saveImage(imgBase64)
 
-    await removeImage(uuid)
+    //await removeImage(uuid)
     //const ans = await getTagsFromImage('img')
     res.send('ans')
 })
