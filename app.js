@@ -2,7 +2,7 @@ const express = require('express')
 const cors = require('cors')
 const { saveImage, getTagsFromImage, removeImage } = require('./utils')
 
-const port = 80
+const port = process.env.PORT || 3001;
 const app = express()
 let corsOptions = {
     origin: ['http://localhost:3000'],
