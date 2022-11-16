@@ -17,13 +17,14 @@ app.get('/ping', async (req, res) => {
 
 app.post('/', async (req, res) => {
 
-    //const imgBase64 = req.body.params.img
+    const imgBase64 = req.body.params.img
 
-    //const uuid = await saveImage(imgBase64)
+    const uuid = await saveImage(imgBase64)
+
+    //const ans = await getTagsFromImage('img')
 
     //await removeImage(uuid)
-    //const ans = await getTagsFromImage('img')
-    res.send('ans')
+    res.send(uuid)
 })
 
 app.listen(port, () => {
