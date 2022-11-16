@@ -2,7 +2,7 @@ const express = require('express')
 const cors = require('cors')
 const { saveImage, getTagsFromImage, removeImage } = require('./utils')
 
-
+const port = 80
 const app = express()
 let corsOptions = {
     origin: ['http://localhost:3000'],
@@ -10,10 +10,6 @@ let corsOptions = {
 app.use(cors(corsOptions))
 app.use(express.json({ type: ['application/json', 'application/csp-report'] }))
 app.use(express.static('public'))
-
-
-
-const port = 4000
 
 app.post('/', async (req, res) => {
 
