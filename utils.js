@@ -44,9 +44,8 @@ const getMostFrequantTag = (tags) => {
 }
 
 
-const getTagsFromImage = async (img) => {
+const getTagsFromImage = async (imgUrl) => {
 
-    const imgUrl = 'https://www.holidayshopbd.com/wp-content/uploads/2021/05/potato.jpg'
     const html = await fetchContentFronYandex(imgUrl)
     const tags = getTagListFromHtml(html)
     const ans = getMostFrequantTag(tags)
@@ -54,7 +53,7 @@ const getTagsFromImage = async (img) => {
     return ans
 }
 
-
+//// filesystem functions
 const saveImage = async (base64) => {
     const base64Data = base64.replace(/^data:image\/jpeg;base64,/, "");
     const id = uuid.v4()

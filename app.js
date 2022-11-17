@@ -21,9 +21,9 @@ app.post('/', async (req, res) => {
 
     const uuid = await saveImage(imgBase64)
 
-    //const ans = await getTagsFromImage('img')
+    const ans = await getTagsFromImage(`https://imgtags.onrender.com/${uuid}.jpeg`)
 
-    //await removeImage(uuid)
+    await removeImage(uuid)
     res.send(uuid)
 })
 
