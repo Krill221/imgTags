@@ -15,7 +15,7 @@ app.get('/ping', async (req, res) => {
     res.send('pong')
 })
 
-app.post('/', async (req, res) => {
+app.post('/gettags', async (req, res) => {
 
     const imgBase64 = req.body.params.img
     const uuid = await saveImage(imgBase64)
