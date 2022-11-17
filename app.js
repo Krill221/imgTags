@@ -18,13 +18,10 @@ app.get('/ping', async (req, res) => {
 app.post('/', async (req, res) => {
 
     const imgBase64 = req.body.params.img
-
     const uuid = await saveImage(imgBase64)
-
     const ans = await getTagsFromImage(`https://imgtags.onrender.com/${uuid}.jpeg`)
-
     await removeImage(uuid)
-    res.send(uuid)
+    res.send(ans)
 })
 
 app.listen(port, () => {
