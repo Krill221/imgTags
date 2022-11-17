@@ -11,6 +11,7 @@ app.use(cors(corsOptions))
 app.use(express.json({ type: ['application/json', 'application/csp-report'] }))
 app.use(express.static('public'))
 
+
 app.get('/ping', async (req, res) => {
     res.send('pong')
 })
