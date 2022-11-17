@@ -14,7 +14,7 @@ const fetchContentFronYandex = async (imgUrl) => {
         {
             params: {
                 rpt: 'imageview',
-                url: 'https://www.holidayshopbd.com/wp-content/uploads/2021/05/potato.jpg'
+                url: imgUrl
             }
         }
     );
