@@ -1,6 +1,7 @@
 const express = require('express')
 const cors = require('cors')
 const { saveImage, getTagsFromImage, removeImage } = require('./utils')
+const { getTagFromBarcode } = require('./barcode')
 
 const port = process.env.PORT || 3001;
 const app = express()
@@ -17,10 +18,14 @@ app.get('/ping', async (req, res) => {
 })
 
 app.post('/gettags', async (req, res) => {
-
+    let ans = ''
     const imgBase64 = req.body.params.img
     const uuid = await saveImage(imgBase64)
-    const ans = await getTagsFromImage(`https://imgtags.onrender.com/${uuid}.jpeg`)
+    ans = await getTagFromBarcode(uuid)
+    if(!ans) {
+        ans = await getTagsFromImage(`https://imgtags.onrender.com/${uuid}.jpeg`)
+    }
+    console.log(ans)
     await removeImage(uuid)
     res.send(ans)
 })

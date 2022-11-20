@@ -53,6 +53,16 @@ const getTagsFromImage = async (imgUrl) => {
     return ans
 }
 
+const getTagFromBarcode = async (imgUrl) => {
+
+    const html = await fetchContentFronYandex(imgUrl)
+    const tags = getTagListFromHtml(html)
+    const ans = getMostFrequantTag(tags)
+
+    return ans
+}
+
+
 //// filesystem functions
 const saveImage = async (base64) => {
     const base64Data = base64.replace(/^data:image\/jpeg;base64,/, "");
