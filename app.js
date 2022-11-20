@@ -25,6 +25,7 @@ app.post('/gettags', async (req, res) => {
     if(!ans) {
         ans = await getTagsFromImage(`https://imgtags.onrender.com/${uuid}.jpeg`)
     }
+
     console.log(ans)
     await removeImage(uuid)
     res.send(ans)
