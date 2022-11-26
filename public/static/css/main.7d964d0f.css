@@ -4089,6 +4089,11 @@ body {
     border: none
 }
 
+.searchbar_focused .Textinput-Clear {
+    right: calc(.25rem + 1px) !important;
+    top: 6px
+}
+
 @media screen and (max-width:768px) {
     .searchbar {
         background-color: rgba(92, 90, 87, .1);
@@ -4460,4 +4465,4 @@ body {
     }
 }
 
-/*# sourceMappingURL=main.a392d4f5.css.map*/
+/*# sourceMappingURL=main.7d964d0f.css.map*/
