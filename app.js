@@ -24,7 +24,8 @@ app.post('/gettags', async (req, res) => {
     console.log(uuid)
     ans = await getTagFromBarcode(uuid)
     if(!ans) {
-        ans = await getTagsFromImage(`https://imgtags.onrender.com/${uuid}.jpeg`)
+        //ans = await getTagsFromImage(`https://imgtags.onrender.com/${uuid}.jpeg`)
+        ans = await getTagsFromImage(`https://imgtags.onrender.com/1c25f3cf-757e-41ae-b1a2-4ce256d0b6a2.jpeg`);
         //ans = await getTagsFromImage(`http://localhost:3001/${uuid}.jpeg`)
     }
     //await removeImage(uuid)
