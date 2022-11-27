@@ -28,7 +28,7 @@ app.post('/gettags', async (req, res) => {
         //ans = await getTagsFromImage(`https://imgtags3.onrender.com/1c25f3cf-757e-41ae-b1a2-4ce256d0b6a2.jpeg`);
         //ans = await getTagsFromImage(`http://localhost:3001/${uuid}.jpeg`)
     }
-    //await removeImage(uuid)
+    await removeImage(uuid)
     res.send(ans)
 })
 
